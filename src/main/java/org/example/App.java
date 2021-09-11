@@ -11,7 +11,7 @@ public class App
     public static void main( String[] args )
     {
         int fm;
-        int hours;
+        double hours;
         double bac;
         double totalAlcohol;
         double weight;
@@ -45,7 +45,7 @@ public class App
 
         while(!input.matches("[0123456789.]+"))
         {
-            if(!input.matches("[0123456789.]+"))
+            if(!input.matches("[0123456789.]+") && !input.equals("no"))
             {
                 System.out.println("You must enter a number.");
             }
@@ -59,7 +59,7 @@ public class App
 
         while(!input.matches("[0123456789.]+"))
         {
-            if(!input.matches("[0123456789.]+"))
+            if(!input.matches("[0123456789.]+") && !input.equals("no"))
             {
                 System.out.println("You must enter a number.");
             }
@@ -73,7 +73,7 @@ public class App
 
         while(!input.matches("[0123456789.]+"))
         {
-            if(!input.matches("[0123456789.]+"))
+            if(!input.matches("[0123456789.]+") && !input.equals("no"))
             {
                 System.out.println("You must enter a number.");
             }
@@ -82,7 +82,7 @@ public class App
             input = sc.nextLine();
         }
 
-        hours = Integer.parseInt(input);
+        hours = Double.parseDouble(input);
         bac = ((totalAlcohol * 5.14)/(weight * ratio)) - 0.015 * hours;
         System.out.println("Your BAC is " + bac);
         if(bac >= 0.8)
